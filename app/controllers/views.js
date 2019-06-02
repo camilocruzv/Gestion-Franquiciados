@@ -25,6 +25,9 @@ function loadProfileFranquiciador(req, res){
 function loadNuevaFranquicia(req, res){
     res.sendFile(path.resolve('app/views/perfil_franquiciador/addfranchise.html'));
 }
+function loadBuscarFranquicia(req, res){
+    res.sendFile(path.resolve('app/views/perfil_franquiciador/buscarfranquicia.html'));
+}
 
 function loadRegisterFranquiciador(req, res){
     res.sendFile(path.resolve('app/views/main/register_admin.html'));
@@ -40,4 +43,5 @@ module.exports = {
     loadNuevaFranquicia,
     loadLoginFranquiciado,
     loadLoginMain,
+    loadBuscarFranquicia,
 };
