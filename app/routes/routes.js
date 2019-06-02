@@ -18,6 +18,7 @@ router.get('/register_admin', viewsCtlr.loadRegisterFranquiciador);
 router.get('/perfil/franquiciado', viewsCtlr.loadProfileFranquiciado);
 router.get('/perfil/franquiciador', viewsCtlr.loadProfileFranquiciador);
 router.get('/nuevafranquicia', viewsCtlr.loadNuevaFranquicia);
+router.get('/signin', viewsCtlr.loadLoginMain);
 
 
 

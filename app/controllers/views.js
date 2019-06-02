@@ -11,6 +11,10 @@ function loadLoginFranquiciado(req, res){
     res.sendFile(path.resolve('app/views/main/loginFranquiciado.html'));
 }
 
+function loadLoginMain(req, res){
+    res.sendFile(path.resolve('app/views/main/principal.html'));
+}
+
 function loadProfileFranquiciado(req, res){
     res.sendFile(path.resolve('app/views/perfil_franquiciado/perfil_franquiciado.html'));
 }
@@ -35,4 +39,5 @@ module.exports = {
     loadProfileFranquiciador,
     loadNuevaFranquicia,
     loadLoginFranquiciado,
+    loadLoginMain,
 };
