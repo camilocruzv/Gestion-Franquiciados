@@ -17,9 +17,12 @@ var FranquiciadoSchema = mongoose.Schema({
     username: {
         type: String
     },
-    passwprd: {
+    password: {
         type: String
-    }
+    },
+    tipo: {
+        type: String
+    },
 });
 
 var Franquiciado = module.exports = mongoose.model('Franquiciado', FranquiciadoSchema);

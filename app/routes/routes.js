@@ -12,7 +12,8 @@ var LocalStrategy = require('passport-local').Strategy;
 
 
 // Views de la Página Principal
-router.get('/signin', viewsCtlr.loadMainPage);
+router.get('/franquiciador/signin', viewsCtlr.loadLoginFranquiciador);
+router.get('/franquiciado/signin', viewsCtlr.loadLoginFranquiciado);
 router.get('/register_admin', viewsCtlr.loadRegisterFranquiciador);
 router.get('/perfil/franquiciado', viewsCtlr.loadProfileFranquiciado);
 router.get('/perfil/franquiciador', viewsCtlr.loadProfileFranquiciador);
@@ -26,12 +27,19 @@ router.post('/register_admin', function(req,res){
     var username = req.body.username;
     var password = req.body.password;
     var password2 = req.body.password_confirm;
+    var gerente = req.body.gerente;
+    var email = req.body.email;
+    var telefono = req.body.telefono;
+
 
     //validation
     req.checkBody('username', 'El nombre de usuario es requerido').notEmpty();
     req.checkBody('password', 'La contraseña es requerida').notEmpty();
     req.checkBody('username', 'Confirme la contreseña para registrarse').notEmpty();
     req.checkBody('password', 'Las contraseñas deben coincidir').equals(req.body.password_confirm);
+    req.checkBody('gerente', 'El campo de gerente es requerido').notEmpty();
+    req.checkBody('email', 'El email es requerido').notEmpty();
+    req.checkBody('telefono', 'El telefono es requerido').notEmpty();
     
     var errors = req.validationErrors();
     console.log(errors)
@@ -39,8 +47,12 @@ router.post('/register_admin', function(req,res){
         res.render('main/register_admin', {errors:errors});
     } else{
         var newFranquiciador = new Franquiciador({
+            gerente: gerente,
+            email: email,
+            telefono: telefono,
             username: username,
-            password: password
+            password: password,
+            tipo: "franquiciador"
         });
 
         Franquiciador.createFranquiciador(newFranquiciador, function(err,franquiciador){
@@ -49,7 +61,7 @@ router.post('/register_admin', function(req,res){
         });
 
 
-        res.redirect('/signin');
+        res.redirect('/franquiciador/signin');
     }
 });
 
@@ -74,23 +86,34 @@ passport.use('Franquiciador',new LocalStrategy(
   }));
 
 passport.serializeUser(function(user, done) {
-    done(null, user.id);
+    var key = {
+        id: user.id,
+        tipo: user.tipo
+    }
+    done(null, key);
+
 });
   
-passport.deserializeUser(function(id, done) {
-    Franquiciador.getFranquiciadorById(id, function(err, user) {
-      done(err, user);
-    });
+passport.deserializeUser(function(key, done) {
+    if (key.tipo == 'franquiciador') {
+        Franquiciador.getFranquiciadorById(key.id, function(err, user) {
+        done(err, user);
+        });
+    } else if (key.tipo == "franquiciado") {
+        Franquiciado.getFranquiciadoById(key.id, function(err, user) {
+            done(err, user);
+            });
+    }
 });
 
-router.post('/signin', 
-    passport.authenticate('local',{
-        success_Redirect: '/perfil/franquiciado',
-        failureRedirect: '/signin',
+router.post('/franquiciador/signin', 
+    passport.authenticate('Franquiciador',{
+        success_Redirect: '/perfil/franquiciador',
+        failureRedirect: '/franquiciador/signin',
         failureFlash: true
     }),function(req,res){
         console.log('ENTRAAA');
-        res.redirect('perfil/franquiciado')
+        res.redirect('../perfil/franquiciador')
 });
 
 
@@ -121,7 +144,7 @@ router.post('/nuevafranquicia', function(req,res){
     var errors = req.validationErrors();
     console.log(errors)
     if (errors){
-        res.render('perfil_franquiciador/addfranchise', {errors:errors});
+        res.render('../perfil_franquiciador/addfranchise', {errors:errors});
     } else {
         var newFranquiciado = new Franquiciado({
             gerente: gerente,
@@ -129,7 +152,8 @@ router.post('/nuevafranquicia', function(req,res){
             telefono: telefono,
             ubicacion: ubicacion,
             username: username,
-            password: password
+            password: password,
+            tipo: "franquiciado"
         });
 
         Franquiciado.createFranquiciado(newFranquiciado, function(err,user){
@@ -143,6 +167,35 @@ router.post('/nuevafranquicia', function(req,res){
 
 });
 
+passport.use('Franquiciado',new LocalStrategy(
+    function(username, password, done) {
+      Franquiciado.getFranquiciadoByUsername(username, function(err,user){
+          if(err) throw err;
+          if (!user){
+              return done(null,false);
+          }
+      
+      Franquiciado.comparePassword(password, user.password, function(err,isMatch){
+              if (err) throw err;
+              if (isMatch){
+                  return done(null,user)
+              } else{
+                  return(null,false,{'message':'Constraseña no válida'})
+              }
+          })
+      })
+    }));
+
+
+router.post('/franquiciado/signin', 
+    passport.authenticate('Franquiciado',{
+        success_Redirect: '/perfil/franquiciado',
+        failureRedirect: '/franquiciado/signin',
+        failureFlash: true
+    }),function(req,res){
+        console.log('ENTRAAA');
+        res.redirect('../perfil/franquiciado')
+});
 
 
 module.exports = router;

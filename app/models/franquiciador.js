@@ -2,12 +2,25 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 
 var FranquiciadorSchema = mongoose.Schema({
+    gerente: {
+        type: String
+    },
+    email: {
+        type: String
+    },
+    telefono: {
+        type: String
+    },
     username: {
         type: String,
     },
     password: {
         type: String
-    }
+    },
+    tipo: {
+        type: String
+    },
+    
 });
 
 var Franquiciador = module.exports = mongoose.model('Franquiciador', FranquiciadorSchema);

@@ -3,8 +3,12 @@
 var path = require('path');
 // Main View
 
-function loadMainPage(req, res){
+function loadLoginFranquiciador(req, res){
     res.sendFile(path.resolve('app/views/main/main.html'));
+}
+
+function loadLoginFranquiciado(req, res){
+    res.sendFile(path.resolve('app/views/main/loginFranquiciado.html'));
 }
 
 function loadProfileFranquiciado(req, res){
@@ -25,9 +29,10 @@ function loadRegisterFranquiciador(req, res){
 
 
 module.exports = {
-    loadMainPage,
+    loadLoginFranquiciador,
     loadProfileFranquiciado,
     loadRegisterFranquiciador,
     loadProfileFranquiciador,
     loadNuevaFranquicia,
+    loadLoginFranquiciado,
 };
