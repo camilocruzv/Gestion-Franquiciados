@@ -5,6 +5,8 @@ const viewsCtlr = require('../controllers/views');
 const router = express.Router();
 
 var Franquiciador = require('../models/franquiciador');
+var Franquiciado = require('../models/franquiciado');
+
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
@@ -52,7 +54,7 @@ router.post('/register_admin', function(req,res){
 });
 
 
-passport.use(new LocalStrategy(
+passport.use('Franquiciador',new LocalStrategy(
   function(username, password, done) {
     Franquiciador.getFranquiciadorByUsername(username, function(err,user){
         if(err) throw err;
@@ -108,9 +110,9 @@ router.post('/nuevafranquicia', function(req,res){
     //validation
     req.checkBody('username', 'El nombre de usuario es requerido').notEmpty();
     req.checkBody('email', 'El email es requerido').notEmpty();
-    req.checkBody('telefono', 'El telefono es requerido').notEmpty();
+    req.checkBody('phone', 'El telefono es requerido').notEmpty();
     req.checkBody('gerente', 'El nombre del gerente es requerido').notEmpty();
-    req.checkBody('ubicación', 'La ubicación es requerida').notEmpty();
+    req.checkBody('ubicacion', 'La ubicación es requerida').notEmpty();
     req.checkBody('email', 'Ingrese un email válido').isEmail();
     req.checkBody('password', 'La contraseña es requerida').notEmpty();
     req.checkBody('password2', 'Confirme la contreseña para registrarse').notEmpty();
@@ -120,7 +122,24 @@ router.post('/nuevafranquicia', function(req,res){
     console.log(errors)
     if (errors){
         res.render('perfil_franquiciador/addfranchise', {errors:errors});
-    } 
+    } else {
+        var newFranquiciado = new Franquiciado({
+            gerente: gerente,
+            emaiil: email,
+            telefono: telefono,
+            ubicacion: ubicacion,
+            username: username,
+            password: password
+        });
+
+        Franquiciado.createFranquiciado(newFranquiciado, function(err,user){
+            if(err) throw err;
+            console.log(user)
+        });
+
+        //req.flash('success_msg', 'Se ha creado la franquicia exitosamente');
+        res.redirect('/nuevafranquicia');
+    }
 
 });
 
