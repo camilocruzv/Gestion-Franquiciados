@@ -4,11 +4,29 @@
   "description": "Web Application",
   "main": "app/index.js",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "*",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "*",
     "dotenv": "^8.0.0",
+    "ejs": "^2.6.1",
     "express": "^4.17.1",
-    "express-session": "^1.16.1"
+    "express-ejs-layouts": "^2.5.0",
+    "express-generator": "^4.16.1",
+    "express-handlebars": "*",
+    "express-messages": "*",
+    "express-session": "^1.16.1",
+    "express-validator": "^5.3.1",
+    "jade": "^1.11.0",
+    "mongoose": "^5.4.1",
+    "passport": "^0.4.0",
+    "passport-http": "*",
+    "passport-local": "^1.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "kerberos": " ~0.0.17",
+    "mongodb": "~2.0.33"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app/index.js"
