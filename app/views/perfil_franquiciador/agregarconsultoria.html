@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        #loading .svg-icon-loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -50px 0 0 -50px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <title>Gestor Franquiciados</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/images/icons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/images/icons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/images/icons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../../assets/images/icons/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/images/icons/favicon.png">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/helpers/animate.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/helpers/boilerplate.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/helpers/border-radius.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/helpers/grid.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/helpers/page-transitions.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/helpers/spacing.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/helpers/typography.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/helpers/utils.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/helpers/colors.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/material/ripple.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/elements/badges.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/elements/buttons.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/elements/content-box.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/elements/dashboard-box.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/elements/forms.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/elements/images.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/elements/info-box.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/elements/invoice.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/elements/loading-indicators.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/elements/menus.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/elements/panel-box.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/elements/response-messages.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/elements/responsive-tables.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/elements/ribbon.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/elements/social-box.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/elements/tables.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/elements/tile-box.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/elements/timeline.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/icons/fontawesome/fontawesome.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/icons/linecons/linecons.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/icons/spinnericon/spinnericon.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/accordion-ui/accordion.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/calendar/calendar.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/carousel/carousel.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/charts/justgage/justgage.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/charts/morris/morris.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/charts/piegage/piegage.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/charts/xcharts/xcharts.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/chosen/chosen.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/colorpicker/colorpicker.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/datatable/datatable.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/datepicker/datepicker.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/datepicker-ui/datepicker.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/dialog/dialog.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/dropdown/dropdown.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/dropzone/dropzone.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/file-input/fileinput.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/input-switch/inputswitch.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/input-switch/inputswitch-alt.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/ionrangeslider/ionrangeslider.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/jcrop/jcrop.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/jgrowl-notifications/jgrowl.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/loading-bar/loadingbar.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/maps/vector-maps/vectormaps.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/markdown/markdown.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/modal/modal.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/multi-select/multiselect.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/multi-upload/fileupload.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/nestable/nestable.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/noty-notifications/noty.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/popover/popover.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/pretty-photo/prettyphoto.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/progressbar/progressbar.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/range-slider/rangeslider.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/slidebars/slidebars.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/slider-ui/slider.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/summernote-wysiwyg/summernote-wysiwyg.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/tabs-ui/tabs.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/timepicker/timepicker.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/tocify/tocify.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/tooltip/tooltip.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/touchspin/touchspin.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/uniform/uniform.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/wizard/wizard.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/xeditable/xeditable.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/snippets/chat.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/snippets/files-box.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/snippets/login-box.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/snippets/notification-box.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/snippets/progress-box.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/snippets/todo.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/snippets/user-profile.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/snippets/mobile-navigation.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/applications/mailbox.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/themes/admin/layout.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/themes/admin/color-schemes/default.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/themes/components/default.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/themes/components/border-radius.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/helpers/responsive-elements.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/helpers/admin-responsive.css">
+    
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/js-core/jquery-core.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/js-core/jquery-ui-core.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/js-core/jquery-ui-widget.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/js-core/jquery-ui-mouse.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/js-core/jquery-ui-position.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/js-core/transition.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/js-core/modernizr.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/js-core/jquery-cookie.js"></script>
+    <script type="text/javascript">$(window).load(function () {
+            setTimeout(function () {
+                $('#loading').fadeOut(400, "linear");
+            }, 300);
+        });</script>
+</head>
+
+<body>
+    <div id="sb-site">
+        <div class="sb-slidebar bg-black sb-left sb-style-overlay">
+            <div class="scrollable-content scrollable-slim-sidebar">
+                <div class="pad10A">
+                    <div class="divider-header">Online</div>
+                    <ul class="chat-box">
+                        <li>
+                            <div class="status-badge"><img class="img-circle" width="40"
+                                    src="https://agileui.com/demo/delight/demo/admin-template/../../assets/image-resources/people/testimonial1.jpg"
+                                    alt="">
+                                <div class="small-badge bg-green"></div>
+                            </div><b>Grace Padilla</b>
+                            <p>On the other hand, we denounce...</p><a href="#"
+                                class="btn btn-md no-border radius-all-100 btn-black"><i
+                                    class="glyph-icon icon-comments-o"></i></a>
+                        </li>
+                        <li>
+                            <div class="status-badge"><img class="img-circle" width="40"
+                                    src="https://agileui.com/demo/delight/demo/admin-template/../../assets/image-resources/people/testimonial2.jpg"
+                                    alt="">
+                                <div class="small-badge bg-green"></div>
+                            </div><b>Carl Gamble</b>
+                            <p>Dislike men who are so beguiled...</p><a href="#"
+                                class="btn btn-md no-border radius-all-100 btn-black"><i
+                                    class="glyph-icon icon-comments-o"></i></a>
+                        </li>
+                        <li>
+                            <div class="status-badge"><img class="img-circle" width="40"
+                                    src="https://agileui.com/demo/delight/demo/admin-template/../../assets/image-resources/people/testimonial3.jpg"
+                                    alt="">
+                                <div class="small-badge bg-green"></div>
+                            </div><b>Michael Poole</b>
+                            <p>Of pleasure of the moment, so...</p><a href="#"
+                                class="btn btn-md no-border radius-all-100 btn-black"><i
+                                    class="glyph-icon icon-comments-o"></i></a>
+                        </li>
+                        <li>
+                            <div class="status-badge"><img class="img-circle" width="40"
+                                    src="https://agileui.com/demo/delight/demo/admin-template/../../assets/image-resources/people/testimonial4.jpg"
+                                    alt="">
+                                <div class="small-badge bg-green"></div>
+                            </div><b>Bill Green</b>
+                            <p>That they cannot foresee the...</p><a href="#"
+                                class="btn btn-md no-border radius-all-100 btn-black"><i
+                                    class="glyph-icon icon-comments-o"></i></a>
+                        </li>
+                        <li>
+                            <div class="status-badge"><img class="img-circle" width="40"
+                                    src="https://agileui.com/demo/delight/demo/admin-template/../../assets/image-resources/people/testimonial5.jpg"
+                                    alt="">
+                                <div class="small-badge bg-green"></div>
+                            </div><b>Cheryl Soucy</b>
+                            <p>Pain and trouble that are bound...</p><a href="#"
+                                class="btn btn-md no-border radius-all-100 btn-black"><i
+                                    class="glyph-icon icon-comments-o"></i></a>
+                        </li>
+                    </ul>
+                    <div class="divider-header">Idle</div>
+                    <ul class="chat-box">
+                        <li>
+                            <div class="status-badge"><img class="img-circle" width="40"
+                                    src="https://agileui.com/demo/delight/demo/admin-template/../../assets/image-resources/people/testimonial6.jpg"
+                                    alt="">
+                                <div class="small-badge bg-orange"></div>
+                            </div><b>Jose Kramer</b>
+                            <p>Equal blame belongs to those...</p><a href="#"
+                                class="btn btn-md no-border radius-all-100 btn-black"><i
+                                    class="glyph-icon icon-comments-o"></i></a>
+                        </li>
+                        <li>
+                            <div class="status-badge"><img class="img-circle" width="40"
+                                    src="https://agileui.com/demo/delight/demo/admin-template/../../assets/image-resources/people/testimonial7.jpg"
+                                    alt="">
+                                <div class="small-badge bg-orange"></div>
+                            </div><b>Dan Garcia</b>
+                            <p>Weakness of will, which is same...</p><a href="#"
+                                class="btn btn-md no-border radius-all-100 btn-black"><i
+                                    class="glyph-icon icon-comments-o"></i></a>
+                        </li>
+                        <li>
+                            <div class="status-badge"><img class="img-circle" width="40"
+                                    src="https://agileui.com/demo/delight/demo/admin-template/../../assets/image-resources/people/testimonial8.jpg"
+                                    alt="">
+                                <div class="small-badge bg-orange"></div>
+                            </div><b>Edward Bridges</b>
+                            <p>These cases are perfectly simple...</p><a href="#"
+                                class="btn btn-md no-border radius-all-100 btn-black"><i
+                                    class="glyph-icon icon-comments-o"></i></a>
+                        </li>
+                    </ul>
+                    <div class="divider-header">Offline</div>
+                    <ul class="chat-box">
+                        <li>
+                            <div class="status-badge"><img class="img-circle" width="40"
+                                    src="https://agileui.com/demo/delight/demo/admin-template/../../assets/image-resources/people/testimonial1.jpg"
+                                    alt="">
+                                <div class="small-badge bg-red"></div>
+                            </div><b>Randy Herod</b>
+                            <p>In a free hour, when our power...</p><a href="#"
+                                class="btn btn-md no-border radius-all-100 btn-black"><i
+                                    class="glyph-icon icon-comments-o"></i></a>
+                        </li>
+                        <li>
+                            <div class="status-badge"><img class="img-circle" width="40"
+                                    src="https://agileui.com/demo/delight/demo/admin-template/../../assets/image-resources/people/testimonial2.jpg"
+                                    alt="">
+                                <div class="small-badge bg-red"></div>
+                            </div><b>Patricia Bagley</b>
+                            <p>when nothing prevents our being...</p><a href="#"
+                                class="btn btn-md no-border radius-all-100 btn-black"><i
+                                    class="glyph-icon icon-comments-o"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="sb-slidebar bg-black sb-right sb-style-overlay">
+            <div class="scrollable-content scrollable-slim-sidebar">
+                <div class="pad15A"><a href="#" title="" data-toggle="collapse" data-target="#sidebar-toggle-1"
+                        class="popover-title">Cloud status <span class="caret"></span></a>
+                    <div id="sidebar-toggle-1" class="collapse in">
+                        <div class="pad15A">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="text-center font-gray pad5B text-transform-upr font-size-12">New visits
+                                    </div>
+                                    <div class="chart-alt-3 font-gray-dark" data-percent="55"><span>55</span>%</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="text-center font-gray pad5B text-transform-upr font-size-12">Bounce rate
+                                    </div>
+                                    <div class="chart-alt-3 font-gray-dark" data-percent="46"><span>46</span>%</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="text-center font-gray pad5B text-transform-upr font-size-12">Server load
+                                    </div>
+                                    <div class="chart-alt-3 font-gray-dark" data-percent="92"><span>92</span>%</div>
+                                </div>
+                            </div>
+                            <div class="divider mrg15T mrg15B"></div>
+                            <div class="text-center"><a href="#"
+                                    class="btn center-div btn-info mrg5T btn-sm text-transform-upr updateEasyPieChart"><i
+                                        class="glyph-icon icon-refresh"></i> Update charts</a></div>
+                        </div>
+                    </div>
+                    <div class="clear"></div><a href="#" title="" data-toggle="collapse" data-target="#sidebar-toggle-6"
+                        class="popover-title">Latest transfers <span class="caret"></span></a>
+                    <div id="sidebar-toggle-6" class="collapse in">
+                        <ul class="files-box">
+                            <li><i class="files-icon glyph-icon font-red icon-file-archive-o"></i>
+                                <div class="files-content"><b>blog_export.zip</b>
+                                    <div class="files-date"><i class="glyph-icon icon-clock-o"></i> added on
+                                        <b>22.10.2014</b></div>
+                                </div>
+                                <div class="files-buttons"><a href="#" class="btn btn-xs hover-info tooltip-button"
+                                        data-placement="left" title="Download"><i
+                                            class="glyph-icon icon-cloud-download"></i></a> <a href="#"
+                                        class="btn btn-xs hover-danger tooltip-button" data-placement="left"
+                                        title="Delete"><i class="glyph-icon icon-times"></i></a></div>
+                            </li>
+                            <li class="divider"></li>
+                            <li><i class="files-icon glyph-icon icon-file-code-o"></i>
+                                <div class="files-content"><b>homepage-test.html</b>
+                                    <div class="files-date"><i class="glyph-icon icon-clock-o"></i> added
+                                        <b>19.10.2014</b></div>
+                                </div>
+                                <div class="files-buttons"><a href="#" class="btn btn-xs hover-info tooltip-button"
+                                        data-placement="left" title="Download"><i
+                                            class="glyph-icon icon-cloud-download"></i></a> <a href="#"
+                                        class="btn btn-xs hover-danger tooltip-button" data-placement="left"
+                                        title="Delete"><i class="glyph-icon icon-times"></i></a></div>
+                            </li>
+                            <li class="divider"></li>
+                            <li><i class="files-icon glyph-icon font-yellow icon-file-image-o"></i>
+                                <div class="files-content"><b>monthlyReport.jpg</b>
+                                    <div class="files-date"><i class="glyph-icon icon-clock-o"></i> added on
+                                        <b>10.9.2014</b></div>
+                                </div>
+                                <div class="files-buttons"><a href="#" class="btn btn-xs hover-info tooltip-button"
+                                        data-placement="left" title="Download"><i
+                                            class="glyph-icon icon-cloud-download"></i></a> <a href="#"
+                                        class="btn btn-xs hover-danger tooltip-button" data-placement="left"
+                                        title="Delete"><i class="glyph-icon icon-times"></i></a></div>
+                            </li>
+                            <li class="divider"></li>
+                            <li><i class="files-icon glyph-icon font-green icon-file-word-o"></i>
+                                <div class="files-content"><b>new_presentation.doc</b>
+                                    <div class="files-date"><i class="glyph-icon icon-clock-o"></i> added on
+                                        <b>5.9.2014</b></div>
+                                </div>
+                                <div class="files-buttons"><a href="#" class="btn btn-xs hover-info tooltip-button"
+                                        data-placement="left" title="Download"><i
+                                            class="glyph-icon icon-cloud-download"></i></a> <a href="#"
+                                        class="btn btn-xs hover-danger tooltip-button" data-placement="left"
+                                        title="Delete"><i class="glyph-icon icon-times"></i></a></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div><a href="#" title="" data-toggle="collapse" data-target="#sidebar-toggle-3"
+                        class="popover-title">Tasks for today <span class="caret"></span></a>
+                    <div id="sidebar-toggle-3" class="collapse in">
+                        <ul class="progress-box">
+                            <li>
+                                <div class="progress-title">New features development <b>87%</b></div>
+                                <div class="progressbar-smaller progressbar" data-value="87">
+                                    <div class="progressbar-value bg-azure">
+                                        <div class="progressbar-overlay"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="progress-title">Finishing uploading files <b>66%</b></div>
+                                <div class="progressbar-smaller progressbar" data-value="66">
+                                    <div class="progressbar-value bg-red">
+                                        <div class="progressbar-overlay"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="progress-title">Creating tutorials <b>58%</b></div>
+                                <div class="progressbar-smaller progressbar" data-value="58">
+                                    <div class="progressbar-value bg-blue-alt"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="progress-title">Frontend bonus theme <b>74%</b></div>
+                                <div class="progressbar-smaller progressbar" data-value="74">
+                                    <div class="progressbar-value bg-purple"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div><a href="#" title="" data-toggle="collapse" data-target="#sidebar-toggle-4"
+                        class="popover-title">Pending notifications <span class="bs-label bg-orange tooltip-button"
+                            title="Label example">New</span> <span class="caret"></span></a>
+                    <div id="sidebar-toggle-4" class="collapse in">
+                        <ul class="notifications-box notifications-box-alt">
+                            <li><span class="bg-purple icon-notification glyph-icon icon-users"></span> <span
+                                    class="notification-text">This is an error notification</span>
+                                <div class="notification-time">a few seconds ago <span
+                                        class="glyph-icon icon-clock-o"></span></div><a href="#"
+                                    class="notification-btn btn btn-xs btn-black tooltip-button" data-placement="left"
+                                    title="View details"><i class="glyph-icon icon-arrow-right"></i></a>
+                            </li>
+                            <li><span class="bg-warning icon-notification glyph-icon icon-ticket"></span> <span
+                                    class="notification-text">This is a warning notification</span>
+                                <div class="notification-time"><b>15</b> minutes ago <span
+                                        class="glyph-icon icon-clock-o"></span></div><a href="#"
+                                    class="notification-btn btn btn-xs btn-black tooltip-button" data-placement="left"
+                                    title="View details"><i class="glyph-icon icon-arrow-right"></i></a>
+                            </li>
+                            <li><span class="bg-green icon-notification glyph-icon icon-random"></span> <span
+                                    class="notification-text font-green">A success message example.</span>
+                                <div class="notification-time"><b>2 hours</b> ago <span
+                                        class="glyph-icon icon-clock-o"></span></div><a href="#"
+                                    class="notification-btn btn btn-xs btn-black tooltip-button" data-placement="left"
+                                    title="View details"><i class="glyph-icon icon-arrow-right"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="loading">
+            <div class="svg-icon-loader"><img
+                    src="https://agileui.com/demo/delight/demo/admin-template/../../assets/images/svg-loaders/bars.svg"
+                    width="40" alt=""></div>
+        </div>
+        <div id="page-wrapper">
+            <div id="mobile-navigation"><button id="nav-toggle" class="collapsed" data-toggle="collapse"
+                    data-target="#page-sidebar"><span></span></button></div>
+            <div id="page-sidebar">
+                <div id="header-logo" class="logo-bg"></div>
+                <div class="scroll-sidebar">
+                    <ul id="sidebar-menu">
+                        <li class="header"><span>Franquicias</span></li>
+                            <li><a href="/nuevafranquicia" title="Edad del cliente"><i
+                            class="glyph-icon icon-linecons-shop"></i> <span>Añadir nueva franquicia</span></a>
+
+                            </li>
+                            <li><a href="javascript:void(0);" title="Edad del cliente"><i
+                                class="glyph-icon icon-linecons-search"></i> <span>Buscar Franquicia</span></a>
+    
+                            </li>
+
+                        <li class="header"><span>Análisis de mercado</span></li>
+                        <li><a href="javascript:void(0);" title="Edad del cliente"><i
+                                    class="glyph-icon icon-linecons-user"></i> <span>Edad del cliente</span></a>
+
+                        </li>
+                        <li><a href="javascript:void(0);" title="Dashboard boxes"><i
+                                    class="glyph-icon icon-linecons-megaphone"></i> <span>Como se enteró de la
+                                    marca</span></a>
+                        </li>
+                        <li><a href="javascript:void(0);" title="Widgets"><i
+                                    class="glyph-icon icon-linecons-globe"></i> <span>Posicionamiento de marcas en el
+                                    mercado</span></a>
+                        </li>
+
+                        <br>
+
+                        <li><a href="javascript:void(0);" title="Advanced tables"><i
+                                    class="glyph-icon icon-linecons-megaphone"></i> <span>Advanced tables</span></a>
+                        </li>
+                        <li><a href="javascript:void(0);" title="Charts"><i
+                                    class="glyph-icon icon-linecons-paper-plane"></i> <span>Charts</span></a>
+                        </li>
+                        <li><a href="javascript:void(0);" title="Maps"><i class="glyph-icon icon-linecons-sound"></i>
+                                <span>Maps</span></a>
+                        </li>
+                        <br>
+                        <li class="header"><span>Análisis de campañas publicitarias</span></li>
+                        <li><a href="javascript:void(0);" title="Pages"><i class="glyph-icon icon-linecons-note"></i>
+                                <span>Porcentaje de audiencia alcanzado</span></a>
+                        </li>
+                        <li><a href="javascript:void(0);" title="Other Pages"><i
+                                    class="glyph-icon icon-linecons-clock"></i> <span>Tiempo de anuncio que ven los
+                                    clientes</span></a>
+                        </li>
+                        <br>
+                        <li><a href="javascript:void(0);" title="Mailbox"><i class="glyph-icon icon-linecons-mail"></i>
+                                <span>Mailbox</span></a>
+                        </li>
+                        <li><a href="javascript:void(0);" title="Snippets"><i class="glyph-icon icon-linecons-cd"></i>
+                                <span>Snippets</span></a>
+                        </li>
+                        <li><a href="javascript:void(0);" title="Helpers"><i class="glyph-icon icon-linecons-doc"></i>
+                                <span>Helpers</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="page-content-wrapper">
+                <div id="page-content">
+                    <div id="page-header">
+                        <div id="header-nav-left"><a class="header-btn" id="logout-btn"
+                                href="https://agileui.com/demo/delight/demo/admin-template/lockscreen-3.html"
+                                title="Lockscreen page example"><i class="glyph-icon icon-linecons-lock"></i></a>
+                            <div class="user-account-btn dropdown"><a href="#" title="My Account"
+                                    class="user-profile clearfix" data-toggle="dropdown"><img width="28"
+                                        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/image-resources/gravatar.jpg"
+                                        alt="Profile image">
+                                    <span>Gerente</span> <i class="glyph-icon icon-angle-down"></i></a>
+                                <div class="dropdown-menu float-right">
+                                    <div class="box-sm">
+                                        <div class="button-pane button-pane-alt pad5L pad5R text-center"><a href="/signin"
+                                                class="btn btn-flat display-block font-normal btn-danger"><i
+                                                    class="glyph-icon icon-power-off"></i> Cerrar sesión</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/javascript"
+                        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/skycons/skycons.js"></script>
+                    <script type="text/javascript"
+                        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/datatable/datatable.js"></script>
+                    <script type="text/javascript"
+                        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/datatable/datatable-bootstrap.js"></script>
+                    <script type="text/javascript"
+                        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/datatable/datatable-tabletools.js"></script>
+                    <script type="text/javascript"
+                        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/charts/chart-js/chart-core.js"></script>
+                    <script type="text/javascript"
+                        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/charts/chart-js/chart-doughnut.js"></script>
+                    <script type="text/javascript"
+                        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/charts/chart-js/chart-demo-1.js"></script>
+                    <script type="text/javascript"
+                        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/charts/flot/flot.js"></script>
+                    <script type="text/javascri Fpt"
+                        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/charts/flot/flot-resize.js"></script>
+                    <script type="text/javascript"
+                        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/charts/flot/flot-stack.js"></script>
+                    <script type="text/javascript"
+                        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/charts/flot/flot-pie.js"></script>
+                    <script type="text/javascript"
+                        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/charts/flot/flot-tooltip.js"></script>
+                    <script type="text/javascript"
+                        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/charts/flot/flot-demo-1.js"></script>
+                    <script type="text/javascript"
+                        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/charts/sparklines/sparklines.js"></script>
+                    <script type="text/javascript"
+                        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/charts/sparklines/sparklines-demo.js"></script>
+                    <link rel="stylesheet" type="text/css"
+                        href="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/owlcarousel/owlcarousel.css">
+                    <script type="text/javascript"
+                        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/owlcarousel/owlcarousel.js"></script>
+                    <script type="text/javascript"
+                        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/owlcarousel/owlcarousel-demo.js"></script>
+                        <br><br>
+                        <h2 align="center"><strong>Agregar consultoria</strong></h2>
+                        <br>
+                        <form class="form-horizontal" action='' method="POST">
+
+                            <div>
+                                    <label for="example-text-input" class="col-2 col-form-label">Identificación franquicia</label>
+                                    <div class="col-10">
+                                    <input class="form-control" type="text" name="id"  id="example-text-input">
+                                    </div>
+                            </div>
+                            <br>
+                            <div>
+                                    <label for="example-date-input" class="col-2 col-form-label">Fecha consultoria</label>
+                                    <div class="col-10">
+                                    <input class="form-control" type="date" name="fecha" id="example-date-input">
+                                    </div>
+                            </div>
+                            <br>
+                            <div>
+                                <div >
+                                    <label for="exampleSelect1" class="col-2 col-form-label">Estado consultoria</label>
+                                    <div class="col-10">
+                                            <select class="form-control" id="exampleSelect1" name="estado">
+                                                    <option>Hecha</option>
+                                                    <option>Pendiente</option>
+                                                </select>
+                                    </div>
+                                    <br>
+                            </div>
+                            <div >
+                                    <label for="example-text-input" class="col-2 col-form-label">Comentarios</label>
+                                    <div class="col-10">
+                                        <textarea class="form-control" id="exampleTextarea" name="comentarios" value="comentarios de la consultoria hecha o por hacer" rows="3"></textarea>
+                                    </div>
+                            </div>
+                            <br>
+                            <br>
+                            <button type="submit" class="btn btn-success">Agregar</button>
+
+                        
+                        </form>
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/dropdown/dropdown.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/tooltip/tooltip.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/popover/popover.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/progressbar/progressbar.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/button/button.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/collapse/collapse.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/superclick/superclick.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/input-switch/inputswitch-alt.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/slimscroll/slimscroll.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/slidebars/slidebars.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/slidebars/slidebars-demo.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/charts/piegage/piegage.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/charts/piegage/piegage-demo.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/screenfull/screenfull.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/content-box/contentbox.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/material/material.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/material/ripples.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/widgets/overlay/overlay.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/js-init/widgets-init.js"></script>
+    <script type="text/javascript"
+        src="https://agileui.com/demo/delight/demo/admin-template/../../assets/themes/admin/layout.js"></script>
+    </div>
+</body>
+
+</html>

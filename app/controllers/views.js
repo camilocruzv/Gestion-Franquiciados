@@ -29,6 +29,10 @@ function loadBuscarFranquicia(req, res){
     res.sendFile(path.resolve('app/views/perfil_franquiciador/buscarfranquicia.html'));
 }
 
+function loadAgregarConsultoria(req, res){
+    res.sendFile(path.resolve('app/views/perfil_franquiciador/agregarconsultoria.html'));
+}
+
 function loadRegisterFranquiciador(req, res){
     res.sendFile(path.resolve('app/views/main/register_admin.html'));
 }
@@ -72,4 +76,5 @@ module.exports = {
     loadGraficaAudienciaAlcanzada,
     loadGraficaTiempoAnuncio,
     loadGraficaCanalesPublicitarios,
+    loadAgregarConsultoria,
 };

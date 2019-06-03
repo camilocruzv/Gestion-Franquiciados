@@ -6,6 +6,7 @@ const router = express.Router();
 
 var Franquiciador = require('../models/franquiciador');
 var Franquiciado = require('../models/franquiciado');
+var Consultoria = require('../models/consultoria');
 
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
@@ -15,11 +16,14 @@ var LocalStrategy = require('passport-local').Strategy;
 router.get('/franquiciador/signin', viewsCtlr.loadLoginFranquiciador);
 router.get('/franquiciado/signin', viewsCtlr.loadLoginFranquiciado);
 router.get('/register_admin', viewsCtlr.loadRegisterFranquiciador);
+
+// Views perfil franquiciador
 router.get('/perfil/franquiciado', viewsCtlr.loadProfileFranquiciado);
 router.get('/perfil/franquiciador', viewsCtlr.loadProfileFranquiciador);
 router.get('/nuevafranquicia', viewsCtlr.loadNuevaFranquicia);
 router.get('/signin', viewsCtlr.loadLoginMain);
 router.get('/buscarfranquicia', viewsCtlr.loadBuscarFranquicia);
+router.get('/agregarconsultoria', viewsCtlr.loadAgregarConsultoria);
 
 // Views perfil franquiciado
 router.get('/perfil/franquiciado/grafica_edad_cliente', viewsCtlr.loadGraficaEdadCliente);
@@ -36,6 +40,43 @@ router.get('/api/franquiciador/list', Franquiciador.getInfoFranquiciador);
 router.get('/api/franquiciado/list', Franquiciado.getInfoFranquiciado);
 
 //FRANQUICIADOR
+router.post('/agregarconsultoria', function(req,res){
+    var id = req.body.id;
+    var fecha = req.body.fecha;
+    var estado = req.body.estado;
+    var comentarios = req.body.comentarios;
+
+    //validation
+    
+    req.checkBody('id', 'La identificación de la franquicia es necesaria').notEmpty();
+    req.checkBody('fecha', 'La fecha es necesaria').notEmpty();
+
+    var errors = req.validationErrors();
+    console.log(errors)
+
+    if (errors){
+        res.render('main/register_admin', {errors:errors});
+    } else{
+        var newConsultoria = new Consultoria({
+            id_franquicia: id,
+            fecha: fecha,
+            estado: estado,
+            comentarios: comentarios,
+        });
+
+        Consultoria.createConsultoria(newConsultoria, function(err,consultoria){
+            if (err) throw err;
+            console.log(consultoria);
+        });
+
+
+        res.redirect('/perfil/franquiciado');
+    }
+
+});
+
+
+
 router.post('/register_admin', function(req,res){
     var username = req.body.username;
     var password = req.body.password;
@@ -44,6 +85,8 @@ router.post('/register_admin', function(req,res){
     var email = req.body.email;
     var telefono = req.body.telefono;
 
+    var errors = req.validationErrors();
+    console.log(errors)
 
     //validation
     req.checkBody('username', 'El nombre de usuario es requerido').notEmpty();
@@ -128,6 +171,13 @@ router.post('/franquiciador/signin',
         console.log('ENTRAAA');
         res.redirect('../perfil/franquiciador')
 });
+
+
+
+
+
+
+
 
 
 
