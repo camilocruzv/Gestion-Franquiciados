@@ -33,6 +33,12 @@ var FranquiciadoSchema = mongoose.Schema({
         internet: String,
         fachada: String,
         otro: String,
+    }],
+    tiempo: [{
+        rango1: String,
+        rango2: String,
+        rango3: String,
+        rango4: String,
     }]
 });
 

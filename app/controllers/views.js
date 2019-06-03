@@ -61,6 +61,23 @@ function loadGraficaCanalesPublicitarios(req, res){
     res.sendFile(path.resolve('app/views/perfil_franquiciado/analisis_publicidad/canales.html'));
 }
 
+//Franquiciador
+function loadGraficaMercadoFranquiciador(req, res){
+    res.sendFile(path.resolve('app/views/perfil_franquiciador/analisis_mercado/posicionamiento.html'));
+}
+
+function loadGraficaAudienciaAlcanzadaFranquiciador(req, res){
+    res.sendFile(path.resolve('app/views/perfil_franquiciador/analisis_publicidad/audiencia.html'));
+}
+
+function loadGraficaCanalesPublicitariosFranquiciador(req, res){
+    res.sendFile(path.resolve('app/views/perfil_franquiciador/analisis_publicidad/canales.html'));
+}
+
+function loadFranquiciaEncontrada(req, res){
+    res.sendFile(path.resolve('app/views/perfil_franquiciador/franquicia_encontrada.html'));
+}
+
 module.exports = {
     loadLoginFranquiciador,
     loadProfileFranquiciado,
@@ -76,5 +93,9 @@ module.exports = {
     loadGraficaAudienciaAlcanzada,
     loadGraficaTiempoAnuncio,
     loadGraficaCanalesPublicitarios,
-    loadAgregarConsultoria,
+    loadGraficaMercadoFranquiciador,
+    loadGraficaAudienciaAlcanzadaFranquiciador,
+    loadGraficaCanalesPublicitariosFranquiciador,
+    loadFranquiciaEncontrada,
+    loadAgregarConsultoria
 };

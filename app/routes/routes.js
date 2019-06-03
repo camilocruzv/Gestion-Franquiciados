@@ -24,6 +24,7 @@ router.get('/nuevafranquicia', viewsCtlr.loadNuevaFranquicia);
 router.get('/signin', viewsCtlr.loadLoginMain);
 router.get('/buscarfranquicia', viewsCtlr.loadBuscarFranquicia);
 router.get('/agregarconsultoria', viewsCtlr.loadAgregarConsultoria);
+router.get('/perfil/franquiciador/franquicia_encontrada', viewsCtlr.loadFranquiciaEncontrada);
 
 // Views perfil franquiciado
 router.get('/perfil/franquiciado/grafica_edad_cliente', viewsCtlr.loadGraficaEdadCliente);
@@ -32,6 +33,11 @@ router.get('/perfil/franquiciado/grafica_mercado', viewsCtlr.loadGraficaMercado)
 router.get('/perfil/franquiciado/grafica_audiencia_alcanzada', viewsCtlr.loadGraficaAudienciaAlcanzada);
 router.get('/perfil/franquiciado/grafica_tiempo_anuncio', viewsCtlr.loadGraficaTiempoAnuncio);
 router.get('/perfil/franquiciado/grafica_canales_publicitarios', viewsCtlr.loadGraficaCanalesPublicitarios);
+
+// Views perfil franquiciador
+router.get('/perfil/franquiciador/grafica_mercado', viewsCtlr.loadGraficaMercadoFranquiciador);
+router.get('/perfil/franquiciador/grafica_audiencia_alcanzada', viewsCtlr.loadGraficaAudienciaAlcanzadaFranquiciador);
+router.get('/perfil/franquiciador/grafica_canales_publicitarios', viewsCtlr.loadGraficaCanalesPublicitariosFranquiciador);
 
 //GET franquiciador
 router.get('/api/franquiciador/list', Franquiciador.getInfoFranquiciador);
@@ -172,15 +178,6 @@ router.post('/franquiciador/signin',
         res.redirect('../perfil/franquiciador')
 });
 
-
-
-
-
-
-
-
-
-
 //FRANQUICIA
 router.post('/nuevafranquicia', function(req,res){
     var gerente = req.body.gerente;
@@ -227,6 +224,12 @@ router.post('/nuevafranquicia', function(req,res){
                 internet: "62",
                 fachada: "8",
                 otro: "30",
+            },
+            tiempo: {
+                rango1: "27",
+                rango2: "53",
+                rango3: "14",
+                rango4: "6",
             },
         });
 
