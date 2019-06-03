@@ -15,6 +15,12 @@
     <title>Gestor Franquiciados</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+
     <link rel="apple-touch-icon-precomposed" sizes="144x144"
         href="https://agileui.com/demo/delight/demo/admin-template/../../assets/images/icons/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114"
@@ -245,25 +251,31 @@
                     <ul id="sidebar-menu">
                         <li class="header"><span>Análisis de mercado</span></li>
                         <li><a href="/perfil/franquiciado/grafica_edad_cliente" title="Edad del cliente"><i
-                                    class="glyph-icon icon-linecons-user"></i> <span>Edad del cliente</span></a>
+                                    class="glyph-icon icon-linecons-user"></i> <span>Edad del
+                                    cliente</span></a>
 
                         </li>
+                        </li>
                         <li><a href="/perfil/franquiciado/grafica_anuncio" title="Como se enteró de la
-                            marca"><i class="glyph-icon icon-linecons-megaphone"></i> <span>Como se enteró de la
+                                marca"><i class="glyph-icon icon-linecons-megaphone"></i> <span>Como se enteró de la
                                     marca</span></a>
                         </li>
                         <li><a href="/perfil/franquiciado/grafica_mercado" title="Posicionamiento de marcas en el
-                            mercado"><i class="glyph-icon icon-linecons-globe"></i> <span>Posicionamiento de marcas en 
-                                el mercado</span></a>
+                                mercado"><i class="glyph-icon icon-linecons-globe"></i> <span>Posicionamiento de marcas
+                                    en
+                                    el mercado</span></a>
                         </li>
                         <br><br><br><br>
                         <li class="header"><span>Análisis de campañas publicitarias</span></li>
-                        <li><a href="/perfil/franquiciado/grafica_audiencia_alcanzada" title="Porcentaje de audiencia alcanzado"><i
-                                    class="glyph-icon icon-linecons-note"></i>
+                        <li><a href="/perfil/franquiciado/grafica_audiencia_alcanzada"
+                                title="Porcentaje de audiencia alcanzado"><i class="glyph-icon icon-linecons-note"></i>
                                 <span>Porcentaje de audiencia alcanzado</span></a>
                         </li>
-                        <li><a href="/perfil/franquiciado/grafica_tiempo_anuncio" title="Tiempo de anuncio que ven los
-                            clientes"><i class="glyph-icon icon-linecons-clock"></i> <span>Tiempo de anuncio que ven los clientes</span></a>
+                        <li><a class="nav-item active" href="/perfil/franquiciado/grafica_tiempo_anuncio" title="Tiempo de anuncio que ven los
+                                clientes"><i class="glyph-icon icon-linecons-clock"></i> <span>Tiempo de anuncio que
+                                    ven
+                                    los
+                                    clientes</span></a>
                         </li>
                         <br>
                         <li><a href="/perfil/franquiciado/grafica_canales_publicitarios" title="Canales publicitario"><i
@@ -346,12 +358,17 @@
                     <br><br>
                     <div id="page-title">
                         <center>
-                            <h2>Hola gerente</h2>
+                            <div class="card shadow mb-4" id="myDIV2"
+                                style="width: 80%; text-align: center; border: 5px">
+                                <div class="card-header py-3">
+                                    <h3 class="m-0 font-weight-bold text-primary"><span id="texto_span"></span></h3>
+                                    <br>
+                                </div>
+                                <div class="card-body">
+                                    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                                </div>
+                            </div>
                         </center>
-                        <br><br>
-                        <center><img class="mb-4"
-                                src="https://user-images.githubusercontent.com/38144641/58734080-0572a300-83bc-11e9-8e2c-c72789d94bf5.jpg"
-                                alt="" height="40%" width="20%" height="72"></center>
                     </div>
                 </div>
             </div>
@@ -397,8 +414,8 @@
         src="https://agileui.com/demo/delight/demo/admin-template/../../assets/js-init/widgets-init.js"></script>
     <script type="text/javascript"
         src="https://agileui.com/demo/delight/demo/admin-template/../../assets/themes/admin/layout.js"></script>
-    
-    <script src="../../js/perfil_franquiciado/perfil_franquiciado.js"></script>
+
+    <script src="../../js/perfil_franquiciado/tiempo.js"></script>
 </body>
 
 </html>

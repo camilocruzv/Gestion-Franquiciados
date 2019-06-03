@@ -21,8 +21,19 @@ router.get('/nuevafranquicia', viewsCtlr.loadNuevaFranquicia);
 router.get('/signin', viewsCtlr.loadLoginMain);
 router.get('/buscarfranquicia', viewsCtlr.loadBuscarFranquicia);
 
+// Views perfil franquiciado
+router.get('/perfil/franquiciado/grafica_edad_cliente', viewsCtlr.loadGraficaEdadCliente);
+router.get('/perfil/franquiciado/grafica_anuncio', viewsCtlr.loadGraficaAnuncio);
+router.get('/perfil/franquiciado/grafica_mercado', viewsCtlr.loadGraficaMercado);
+router.get('/perfil/franquiciado/grafica_audiencia_alcanzada', viewsCtlr.loadGraficaAudienciaAlcanzada);
+router.get('/perfil/franquiciado/grafica_tiempo_anuncio', viewsCtlr.loadGraficaTiempoAnuncio);
+router.get('/perfil/franquiciado/grafica_canales_publicitarios', viewsCtlr.loadGraficaCanalesPublicitarios);
 
+//GET franquiciador
+router.get('/api/franquiciador/list', Franquiciador.getInfoFranquiciador);
 
+//GET franquiciado
+router.get('/api/franquiciado/list', Franquiciado.getInfoFranquiciado);
 
 //FRANQUICIADOR
 router.post('/register_admin', function(req,res){
@@ -146,7 +157,7 @@ router.post('/nuevafranquicia', function(req,res){
     var errors = req.validationErrors();
     console.log(errors)
     if (errors){
-        res.render('../perfil_franquiciador/addfranchise', {errors:errors});
+        res.render('perfil_franquiciador/addfranchise', {errors:errors});
     } else {
         var newFranquiciado = new Franquiciado({
             gerente: gerente,
@@ -155,7 +166,18 @@ router.post('/nuevafranquicia', function(req,res){
             ubicacion: ubicacion,
             username: username,
             password: password,
-            tipo: "franquiciado"
+            tipo: "franquiciado",
+            porcentajeEdad: {
+                joven: "10",
+                adulto: "60",
+                adultoMayor: "25",
+                anciano: "5",
+            },
+            anuncio: {
+                internet: "62",
+                fachada: "8",
+                otro: "30",
+            },
         });
 
         Franquiciado.createFranquiciado(newFranquiciado, function(err,user){

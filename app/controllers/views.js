@@ -33,7 +33,29 @@ function loadRegisterFranquiciador(req, res){
     res.sendFile(path.resolve('app/views/main/register_admin.html'));
 }
 
+function loadGraficaEdadCliente(req, res){
+    res.sendFile(path.resolve('app/views/perfil_franquiciado/analisis_mercado/edad_cliente.html'));
+}
 
+function loadGraficaAnuncio(req, res){
+    res.sendFile(path.resolve('app/views/perfil_franquiciado/analisis_mercado/como_se_entero.html'));
+}
+
+function loadGraficaMercado(req, res){
+    res.sendFile(path.resolve('app/views/perfil_franquiciado/analisis_mercado/posicionamiento.html'));
+}
+
+function loadGraficaAudienciaAlcanzada(req, res){
+    res.sendFile(path.resolve('app/views/perfil_franquiciado/analisis_publicidad/audiencia.html'));
+}
+
+function loadGraficaTiempoAnuncio(req, res){
+    res.sendFile(path.resolve('app/views/perfil_franquiciado/analisis_publicidad/tiempo.html'));
+}
+
+function loadGraficaCanalesPublicitarios(req, res){
+    res.sendFile(path.resolve('app/views/perfil_franquiciado/analisis_publicidad/canales.html'));
+}
 
 module.exports = {
     loadLoginFranquiciador,
@@ -44,4 +66,10 @@ module.exports = {
     loadLoginFranquiciado,
     loadLoginMain,
     loadBuscarFranquicia,
+    loadGraficaEdadCliente,
+    loadGraficaAnuncio,
+    loadGraficaMercado,
+    loadGraficaAudienciaAlcanzada,
+    loadGraficaTiempoAnuncio,
+    loadGraficaCanalesPublicitarios,
 };
