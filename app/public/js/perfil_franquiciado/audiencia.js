@@ -1,4 +1,4 @@
-document.getElementById("texto_span").innerHTML = "Porcentaje posicionamiento de marcas en el mercado";
+document.getElementById("texto_span").innerHTML = "Porcentaje de audiencia alcanzada";
 
 Highcharts.chart('container', {
     chart: {
@@ -23,8 +23,8 @@ Highcharts.chart('container', {
     series: [{
         name: 'Porcentaje',
         data: [
-            ['1', 10],
-            ['2', 40],
+            ['Audiencia alcanzada', 64],
+            ['Audiencia no alcanzada', 36],
         ]
     }]
 });

@@ -24,6 +24,7 @@ router.get('/nuevafranquicia', viewsCtlr.loadNuevaFranquicia);
 router.get('/signin', viewsCtlr.loadLoginMain);
 router.get('/buscarfranquicia', viewsCtlr.loadBuscarFranquicia);
 router.get('/agregarconsultoria', viewsCtlr.loadAgregarConsultoria);
+router.get('/perfil/franquiciador/franquicia_encontrada', viewsCtlr.loadFranquiciaEncontrada);
 
 // Views perfil franquiciado
 router.get('/perfil/franquiciado/grafica_edad_cliente', viewsCtlr.loadGraficaEdadCliente);
@@ -33,11 +34,23 @@ router.get('/perfil/franquiciado/grafica_audiencia_alcanzada', viewsCtlr.loadGra
 router.get('/perfil/franquiciado/grafica_tiempo_anuncio', viewsCtlr.loadGraficaTiempoAnuncio);
 router.get('/perfil/franquiciado/grafica_canales_publicitarios', viewsCtlr.loadGraficaCanalesPublicitarios);
 
+// Views perfil franquiciador
+router.get('/perfil/franquiciador/grafica_mercado', viewsCtlr.loadGraficaMercadoFranquiciador);
+router.get('/perfil/franquiciador/grafica_audiencia_alcanzada', viewsCtlr.loadGraficaAudienciaAlcanzadaFranquiciador);
+router.get('/perfil/franquiciador/grafica_canales_publicitarios', viewsCtlr.loadGraficaCanalesPublicitariosFranquiciador);
+
+//view consultoria
+router.get('/perfil/franquiciado/consultoria_encontrada', viewsCtlr.loadConsultoria);
+
 //GET franquiciador
 router.get('/api/franquiciador/list', Franquiciador.getInfoFranquiciador);
 
 //GET franquiciado
 router.get('/api/franquiciado/list', Franquiciado.getInfoFranquiciado);
+router.get('/api/franquiciado/list2', Franquiciado.getInfoFranquiciadoPorUbi);
+
+//GET consultoria
+router.get('/api/consultoria/list', Consultoria.getInfoConsultoria);
 
 //FRANQUICIADOR
 router.post('/agregarconsultoria', function(req,res){
@@ -70,7 +83,7 @@ router.post('/agregarconsultoria', function(req,res){
         });
 
 
-        res.redirect('/perfil/franquiciado');
+        res.redirect('/perfil/franquiciador');
     }
 
 });
@@ -172,15 +185,6 @@ router.post('/franquiciador/signin',
         res.redirect('../perfil/franquiciador')
 });
 
-
-
-
-
-
-
-
-
-
 //FRANQUICIA
 router.post('/nuevafranquicia', function(req,res){
     var gerente = req.body.gerente;
@@ -227,6 +231,12 @@ router.post('/nuevafranquicia', function(req,res){
                 internet: "62",
                 fachada: "8",
                 otro: "30",
+            },
+            tiempo: {
+                rango1: "27",
+                rango2: "53",
+                rango3: "14",
+                rango4: "6",
             },
         });
 
