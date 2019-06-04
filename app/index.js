@@ -37,20 +37,22 @@ server.use(passport.session());
 server.use(routes);
 
 
-/*
-server.set('port', process.env.PORT || 3000);
+
+server.set('port', process.env.PORT || 5000);
 
 server.listen(server.get('port'), () => {
   console.log("server on port ${server.get('port')}");
 });
-*/
 
+
+/*
 const PORT = 8000;
 const HOST = '0.0.0.0'; 
 
 server.listen(PORT, HOST, function(req, res){
     console.log('\nApp web corriendo en http://localhost:'+PORT+'\n');
   });
+  */
 
 
   server.get('/', (req, res) => {
@@ -59,7 +61,15 @@ server.listen(PORT, HOST, function(req, res){
   
   module.exports = server;
 
-mongoose.connect('mongodb://localhost/CRM');
+MONGO_URI = 'mongodb+srv://proyectosw:proyectofinal@clusterfinal-ihwut.mongodb.net/test?retryWrites=true&w=majority';
+mongoose.set('userFindAndModify',true);
+mongoose.connect(MONGO_URI, {
+  useNewUrlParser: true,
+  useCreateIndex: true
+}).then(db => console.log('DB IS CONNECTEDDDDD'));
+console.log('CORRE')
+
+
 const db = mongoose.connection;
 
 

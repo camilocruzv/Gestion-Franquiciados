@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Web Application",
   "main": "app/index.js",
-  "scripts": {
-    "start": "node ./app/index.js"
-  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "*",
@@ -24,12 +21,15 @@
     "mongoose": "^5.4.1",
     "passport": "^0.4.0",
     "passport-http": "*",
-    "passport-local": "^1.0.0",
-    "mongodb": "~2.0.33"
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "kerberos": " ~0.0.17",
     "mongodb": "~2.0.33"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app/index.js"
   },
   "author": "Camilo Cruz Villegas, Mariana Ramirez",
   "license": "ISC"
