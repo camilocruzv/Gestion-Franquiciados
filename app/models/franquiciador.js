@@ -52,7 +52,7 @@ module.exports.comparePassword = function(candidatepassword,hash, callback) {
 }
 
 module.exports.getInfoFranquiciador = function(req, res) {
-    var username = req.query.username;
+    let username = req.query.username;
     Franquiciador.findOne({ username: username }, (err, info_franquiciador) => {
         if (err) return res.status(500).send({ message: `Error al realizar la petición: ${err}`, status: 'failed' })
         if (!info_franquiciador) return res.status(404).send({ message: `El aspirante no está registrado en la BD`, status: 'failed' })
