@@ -12,6 +12,15 @@ const flash = require('connect-flash');
 var expressValidator = require('express-validator');
 server.use(expressValidator())
 
+
+//let dbConn = 'mongodb://user1:123456a@ds025232.mlab.com:25232/eacidb';
+//let dbConn = 'mongodb://localhost/CRM';
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true}).then( (req, res) => {
+  console.log("Conectado a la base de datos exitosamente");
+}).catch( err => {
+  console.log("Error al conectarse a la base de datos: ", err);
+});
+
 // Middleware
 const bodyParser = require('body-parser');
 server.use(express.static(path.join(__dirname, 'public')));
@@ -48,14 +57,6 @@ server.listen(PORT, HOST, function(req, res){
   });
   
   module.exports = server;
-
-//let dbConn = 'mongodb://user1:123456a@ds025232.mlab.com:25232/eacidb';
-//let dbConn = 'mongodb://localhost/CRM';
-mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true}).then( (req, res) => {
-  console.log("Conectado a la base de datos exitosamente");
-}).catch( err => {
-  console.log("Error al conectarse a la base de datos: ", err);
-});
 
 server.set('view engine', 'jade');
 
