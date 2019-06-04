@@ -47,7 +47,7 @@ server.listen(server.get('port'), () => {
 
 
 
-const PORT = 8000;
+const PORT = 3000;
 const HOST = '0.0.0.0'; 
 server.listen(PORT, HOST, function(req, res){
     console.log('\nApp web corriendo en http://localhost:'+PORT+'\n');
