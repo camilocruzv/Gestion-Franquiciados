@@ -49,13 +49,13 @@ server.listen(PORT, HOST, function(req, res){
   
   module.exports = server;
 
-mongoose.connect('mongodb://localhost/CRM');
-const db = mongoose.connection;
-
-
-
-
-
+//let dbConn = 'mongodb://user1:123456a@ds025232.mlab.com:25232/eacidb';
+//let dbConn = 'mongodb://localhost/CRM';
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true}).then( (req, res) => {
+  console.log("Conectado a la base de datos exitosamente");
+}).catch( err => {
+  console.log("Error al conectarse a la base de datos: ", err);
+});
 
 server.set('view engine', 'jade');
 
