@@ -78,3 +78,12 @@ module.exports.getInfoFranquiciado = function(req, res) {
         res.status(200).send({ info_franquiciado, status: 'success' })
     });
 }
+
+module.exports.getInfoFranquiciadoPorUbi = function(req, res) {
+    let ubicacion = req.query.ubicacion;
+    Franquiciado.findOne({ ubicacion: ubicacion }, (err, info_franquiciado2) => {
+        if (err) return res.status(500).send({ message: `Error al realizar la petición: ${err}`, status: 'failed' })
+        if (!info_franquiciado2) return res.status(404).send({ message: `El aspirante no está registrado en la BD`, status: 'failed' })
+        res.status(200).send({ info_franquiciado2, status: 'success' })
+    });
+}

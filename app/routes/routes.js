@@ -39,11 +39,18 @@ router.get('/perfil/franquiciador/grafica_mercado', viewsCtlr.loadGraficaMercado
 router.get('/perfil/franquiciador/grafica_audiencia_alcanzada', viewsCtlr.loadGraficaAudienciaAlcanzadaFranquiciador);
 router.get('/perfil/franquiciador/grafica_canales_publicitarios', viewsCtlr.loadGraficaCanalesPublicitariosFranquiciador);
 
+//view consultoria
+router.get('/perfil/franquiciado/consultoria_encontrada', viewsCtlr.loadConsultoria);
+
 //GET franquiciador
 router.get('/api/franquiciador/list', Franquiciador.getInfoFranquiciador);
 
 //GET franquiciado
 router.get('/api/franquiciado/list', Franquiciado.getInfoFranquiciado);
+router.get('/api/franquiciado/list2', Franquiciado.getInfoFranquiciadoPorUbi);
+
+//GET consultoria
+router.get('/api/consultoria/list', Consultoria.getInfoConsultoria);
 
 //FRANQUICIADOR
 router.post('/agregarconsultoria', function(req,res){
@@ -76,7 +83,7 @@ router.post('/agregarconsultoria', function(req,res){
         });
 
 
-        res.redirect('/perfil/franquiciado');
+        res.redirect('/perfil/franquiciador');
     }
 
 });

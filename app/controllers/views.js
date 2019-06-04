@@ -78,6 +78,10 @@ function loadFranquiciaEncontrada(req, res){
     res.sendFile(path.resolve('app/views/perfil_franquiciador/franquicia_encontrada.html'));
 }
 
+function loadConsultoria(req, res){
+    res.sendFile(path.resolve('app/views/perfil_franquiciador/consultoria.html'));
+}
+
 module.exports = {
     loadLoginFranquiciador,
     loadProfileFranquiciado,
@@ -97,5 +101,6 @@ module.exports = {
     loadGraficaAudienciaAlcanzadaFranquiciador,
     loadGraficaCanalesPublicitariosFranquiciador,
     loadFranquiciaEncontrada,
-    loadAgregarConsultoria
+    loadAgregarConsultoria,
+    loadConsultoria
 };
