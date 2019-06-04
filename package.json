@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Web Application",
   "main": "app/index.js",
+  "scripts": {
+    "start": "node ./app/index.js"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "*",
@@ -21,7 +24,8 @@
     "mongoose": "^5.4.1",
     "passport": "^0.4.0",
     "passport-http": "*",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "mongodb": "~2.0.33"
   },
   "devDependencies": {
     "kerberos": " ~0.0.17",
